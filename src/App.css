@@ -1,38 +1,130 @@
-.App {
+* {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+input {
+  border: 0px;
+  padding: 3px;
+  border-radius: 3px;
+  outline: none;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+}
+
+input:focus {
+  box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 2px;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: linear-gradient(to right, #fcfbfb7f, #b7b9e3);
+}
+
+.container {
+  height: 700px;
+  width: 430px;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: rgba(17, 12, 46, 0.7) 0px 48px 100px 0px;
+  background-color: rgb(255, 255, 255);
+}
+
+.right-box {
+  display: inline-block;
+  margin: 0 auto;
+  width: 430px;
+  height: 27rem;
+  align-content: center;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.menu {
+  width: 430px;
+  height: 66px;
+  background: #f57474
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.up-box {
+  width: 430px;
+  height: 100px;
+  background: white
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.left-box>span {
+  max-width: 30rem;
+  font-size: 2.2rem;
+  display: inline-block;
+  padding-top: 13rem;
+  margin: 1rem;
+  font-weight: bold;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+
+h1 {
+  text-align: center;
+  margin-top: 2rem;
+  font-weight: 900;
+  width: 430px;
+  line-height: 100%;
+  color: #f57474
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h3 {
+  text-align: center;
+  margin-top: 2rem;
+  color: #F57474;
+  width: 430px;
+  margin-bottom: 3px;
+}
+
+
+.pass_id {
+  border: 0px;
+  color: black;
+  text-align: center;
+  width: 392px;
+  height: 69px;
+  border-radius: 6px;
+  cursor: pointer;
+  outline: none;
+  margin-top: 3em;
+  font-size: 1rem;
+  letter-spacing: 5px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+button {
+  border: 0px;
+  background-color: #F57474;
+  color: white;
+  width: 392px;
+  height: 69px;
+  border-radius: 6px;
+  cursor: pointer;
+  outline: none;
+  margin-top: 5rem;
+  font-size: 1rem;
+  letter-spacing: 5px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+button:hover {
+  background-color: red;
+}
+
+#alert-message {
+  font-size: smaller;
+  padding: 10px;
+  color: rgb(189, 16, 16);
+}
+
+.userinfo-field {
+  font-size: small;
+  margin-top: 1rem;
 }
