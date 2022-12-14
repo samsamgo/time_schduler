@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { useState, useRef } from 'react';
 
 const Havetododiv = styled.div`
@@ -31,7 +31,6 @@ const InputButton = styled.button`
 `;
 const Todolist = styled.div`
   border: 5px solid transparent;
-  background-color: #fa8;
   border-radius: 30px 10px;
   margin-top: 30px;
   margin-left: auto;
@@ -39,10 +38,10 @@ const Todolist = styled.div`
 `;
 const Checkinput = styled.input`
   position: absolute;
-  left: 5px;
-  margin-top: 13px;
-  width: 30px;
-  height: 30px;
+  left: 15px;
+  margin-top: 18px;
+  width: 20px;
+  height: 20px;
 `;
 
 
@@ -63,10 +62,16 @@ const Todoitem = styled.div`
   line-height: 60px;
 `;
 
+// const todolist = fetch('http://localhost:3001/todolist')
+//     .then(response => console.log(response))
+//     .then((response) => {
+//         return response.json();
+
+//     })
 
 export default function Have_todo({ addDiscussion }) {
     const no = useRef(1);
-    const [todo, setTodo] = useState([]);
+    const [todo, setTodo] = useState();
     const textRef = useRef("");
     const [text, setText] = useState("");
     const changeInput = (e) => {

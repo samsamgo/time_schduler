@@ -21,21 +21,38 @@ position: relative;
 top: 20%;
 `;
 
-const Menubutton = styled.button`
-    width: 30px;
-    height: 30px;
+export const ModalBackdrop = styled.div`
+  // TODO : Modal이 떴을 때의 배경을 깔아주는 CSS를 구현합니다.
+  background-color: rgba(200,0,0,.5);
+  position: absolute;
+  height: 565px;
+  width: 330px;
+  overflow: hidden;
+  border-radius: 8px;
+    left: 100px;
+    bottom : 480px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  border: none;
-  padding: 20px;
-  color: white;
-  border-radius: 50px;
+`;
+
+const Menubutton = styled.button`
+position: absolute;
+top :-70px;
+left : 370px;
+height: 40px;
+width: 40px;
   cursor: grab;
 
 `;
-const calendarbutton = styled.button`
-
-
+const MenuLink = styled(Link)`
+position: relative;
+top :20px;
+left : 20px;
+  cursor: grab;
 `;
+
 
 
 export default function My_Page({ value }) {
@@ -52,14 +69,9 @@ export default function My_Page({ value }) {
         <>
             <div className="container">
                 <div className='menu'>
-                    <Link to="/calender.js"><i className="far fa-question-circle"></i></Link>
-                    <Menubutton onClick={openModalHandler}>
-                        <i class="fa-solid fa-bars"></i>
-                        {isOpen ? "opened" : "Open Modal"}
+                    <MenuLink to="/calender.js" className="fa-solid fa-calendar-days"></MenuLink>
+                    <Menubutton onClick={openModalHandler} className="fa-solid fa-bars">
                     </Menubutton>
-                    <Link to="/HaveToDo"><i className="far fa-question-circle"></i></Link>
-                    <Link to="/calender.js"><i className="far fa-question-circle"></i></Link>
-                    <Link to="/calender.js"><i className="far fa-question-circle"></i></Link>
 
                 </div>
                 <Piediv>
@@ -89,6 +101,16 @@ export default function My_Page({ value }) {
                 <Achivediv>
                     {`현재 성취도 ${value}%`}
                 </Achivediv>
+                {isOpen ?
+                    <ModalBackdrop
+                        onClick={openModalHandler}
+                    >
+                        <Link to="/HaveToDo" className="fa-regular fa-table-list"></Link>
+                        <Link to="/calender.js"><i className="fa-regular fa-table-list"></i></Link>
+                        <Link to="/calender.js"><i className="far fa-question-circle"></i></Link>
+                    </ModalBackdrop>
+                    : null}
+
             </div>
         </>
     );
